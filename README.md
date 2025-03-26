@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Expense Tracker Web Application 💰
 
-## Getting Started
+![Expense Tracker Web Application Screenshot](/public/screenshot.JPG)
 
-First, run the development server:
+[👉 View Live App on Vercel](https://expense-tracker-nextjs-lilac.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Welcome to the Expense Tracker Web App! 🎉
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This app allows you to track your income and expenses in a simple and intuitive way. Whether you're paying a bill or receiving a paycheck, this app helps you visualize where your money is going and how it's growing.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 💸 Enter a **negative amount** for expenses (e.g., rent, groceries, subscriptions).
+- 💰 Enter a **positive amount** for income (e.g., salary, freelance work, bonuses).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+### 🧱 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js** – A full-stack React framework with built-in SSR, routing, and API handling.
+- **TypeScript** – Typed JavaScript to ensure safe and scalable code.
+- **Prisma** – Type-safe ORM to interact with a PostgreSQL database.
+- **Neon** – A modern serverless PostgreSQL database, perfect for fast deployments.
+- **Clerk** – Authentication made simple, with sign-up, sign-in, and session management.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🚀 Features
 
-## Deploy on Vercel
+- Secure user authentication via Clerk
+- Add transactions with description and amount
+- View a summary of your balance, income, and expenses
+- Responsive design for mobile and desktop
+- Real-time updates using server actions
+- Type-safe and scalable codebase with Prisma & TypeScript
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🧪 Planned Features / Improvements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Edit transactions
+- Add categories or tags
+- Filter by date or type
+- Export reports
+- Imporve UI by adding Graphs
