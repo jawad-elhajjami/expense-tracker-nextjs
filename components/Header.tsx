@@ -7,7 +7,7 @@ const Header = async () => {
     return ( 
         <nav className="navbar">
             <div className="navbar-container">
-                <h2>Expense Tracker</h2>
+                <h2 className='text-2xl font-bold text-blue-600'>Expense Tracker</h2>
                 <div>
                     <SignedOut>
                         <SignInButton />
