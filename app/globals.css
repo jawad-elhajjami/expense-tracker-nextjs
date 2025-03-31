@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   /* Light theme (default) */
   --primary-color: #3a86ff;
@@ -18,7 +20,7 @@
 }
 
 /* Theme toggle button */
-.theme-toggle {
+/* .theme-toggle {
   background: transparent;
   border: none;
   color: var(--text-color);
@@ -32,7 +34,7 @@
   border-radius: 50%;
   transition: var(--transition);
   margin-left: 12px;
-}
+} */
 
 .theme-toggle:hover {
   background-color: rgba(128, 128, 128, 0.1);
@@ -44,7 +46,7 @@ body {
 }
 
 /* Media query for color scheme preference */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --primary-color: #4dabf7;
     --secondary-color: #339af0;
@@ -75,7 +77,7 @@ body {
   --border-light: #2c2c2c;
   --box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px;
   --hover-shadow: rgba(0, 0, 0, 0.4) 0px 10px 15px -3px, rgba(0, 0, 0, 0.3) 0px 4px 6px -2px;
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -84,7 +86,7 @@ body {
 }
 
 body {
-  background-color: var(--background);
+  /* background-color: var(--background);w */
   min-height: 100vh;
   margin: 0;
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -125,7 +127,8 @@ body {
 }
 
 .navbar button,
-.guest button {
+.guest button 
+{
   border: 0;
   border-radius: var(--small-radius);
   background: var(--primary-color);
@@ -159,7 +162,7 @@ body {
 }
 
 /* Typography */
-h1 {
+/* h1 {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -182,16 +185,16 @@ h4 {
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--light-text);
-}
+} */
 
-.guest {
+/* .guest {
   text-align: center;
   padding: 30px;
   background: var(--card-bg);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   margin: 20px 0;
-}
+} */
 
 .error {
   background: var(--danger-color);
