@@ -86,7 +86,7 @@ body {
 }
 
 body {
-  /* background-color: var(--background);w */
+  /* background-color: var(--background); */
   min-height: 100vh;
   margin: 0;
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
