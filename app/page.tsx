@@ -6,12 +6,13 @@ import IncomeExpense from "@/components/IncomeExpense";
 import TransactionList from "@/components/TransactionList";
 import { Suspense } from "react";
 
-interface PageProps {
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
-
-export default async function HomePage({ searchParams }: PageProps) {
-  const page = Number(searchParams?.page ?? 1);
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const resolvedParams = await searchParams;
+  const page = Number(resolvedParams.page ?? 1);
   const user = await currentUser();
 
   if (!user) {
