@@ -7,14 +7,12 @@ import TransactionList from "@/components/TransactionList";
 import { Suspense } from "react"
 
 type Props = {
-  searchParams: {
-    page?: string;
-  };
+  searchParams?: Record<string, string | string[] | undefined>;
 };
 
 const HomePage = async ({ searchParams }: Props) => {
   
-  const page = Number(searchParams.page) || 1;
+  const page = Number(searchParams?.page ?? 1);
   const user = await currentUser();
   
   if(!user){
