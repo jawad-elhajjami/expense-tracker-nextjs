@@ -6,11 +6,9 @@ import IncomeExpense from "@/components/IncomeExpense";
 import TransactionList from "@/components/TransactionList";
 import { Suspense } from "react"
 
-type Props = {
-  searchParams?: Record<string, string | string[] | undefined>;
-};
-
-const HomePage = async ({ searchParams }: Props) => {
+const HomePage = async ({ searchParams }: {
+  searchParams?: Record<string, string | string[] | undefined>
+}) => {
   
   const page = Number(searchParams?.page ?? 1);
   const user = await currentUser();
