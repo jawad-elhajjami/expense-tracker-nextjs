@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${nunito.className} pattern`}>
+        <body className={`${nunito.className}`}>
           <Header />
           <main className="container">
             {children}

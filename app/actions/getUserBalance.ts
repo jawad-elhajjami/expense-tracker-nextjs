@@ -2,27 +2,20 @@
 
 import { db } from "@/lib/db"
 import { auth } from "@clerk/nextjs/server"
+import { cache } from 'react'
 
-async function getUserBalance(): Promise<{
-    balance?: number;
-    error?: string;
-}>{
-    const { userId } = await auth();
+export const getUserBalance = cache(async (): Promise<number> => {
+  const { userId } = await auth();
 
-    if(!userId){
-        return {error: 'User not found !'}
-    }
+  if (!userId) {
+    throw new Error("User not found");
+  }
 
-    try {
-        const transactions = db.transaction.findMany({
-            where: {userId}
-        });
-        const balance = (await transactions).reduce((sum, transaction) => sum + transaction.amount, 0)
+  const transactions = await db.transaction.findMany({
+    where: { userId }
+  });
 
-        return { balance };
+  const balance = transactions.reduce((sum, tx) => sum + tx.amount, 0);
 
-    } catch (error) {
-        return {error: "Database error !"}
-    }
-}
-export default getUserBalance;
+  return balance;
+});

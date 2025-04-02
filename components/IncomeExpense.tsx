@@ -3,7 +3,6 @@ import { addCommas } from "@/lib/utils";
 
 
 const IncomeExpense = async() => {
-
     const {income, expense} = await getIncomeExpense();
 
     return ( 
