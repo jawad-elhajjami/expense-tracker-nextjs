@@ -6,7 +6,14 @@ import IncomeExpense from "@/components/IncomeExpense";
 import TransactionList from "@/components/TransactionList";
 import { Suspense } from "react"
 
-const HomePage = async ({searchParams}:{searchParams:{page?:string}}) => {
+type Props = {
+  searchParams: {
+    page?: string;
+  };
+};
+
+const HomePage = async ({ searchParams }: Props) => {
+  
   const page = Number(searchParams.page) || 1;
   const user = await currentUser();
   
