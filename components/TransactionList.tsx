@@ -1,8 +1,8 @@
 import { Transaction } from "@/types/Transaction";
 import getTransactions from "@/app/actions/getTransactions";
 import TransactionItem from "./TransactionItem";
-import Link from 'next/link';
 import { Suspense } from "react";
+import PaginationButtons from "./PaginationButtons";
 
 const TransactionList = async ({page, limit}: {page:number, limit:number}) => {
     
@@ -23,11 +23,7 @@ const TransactionList = async ({page, limit}: {page:number, limit:number}) => {
                     )) 
                 }
             </ul>
-            {/* Pagination */}
-            <div className="flex items-center justify-center gap-4">
-                {page > 1 && <Link className="block bg-blue-500 text-white p-4 rounded-lg" href={`?page=${page - 1}`}> Prev</Link>}
-                {page < totalPages && <Link className="block bg-blue-500 text-white p-4 rounded-lg" href={`?page=${page + 1}`}>Next</Link>}
-            </div>
+            <PaginationButtons currentPage={page} totalPages={totalPages} />
         </Suspense>
     );
 }
