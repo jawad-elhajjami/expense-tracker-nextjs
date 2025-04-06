@@ -422,3 +422,10 @@ label {
 main{
   width: 100%;
 }
+
+/* Prevent content shift during loading */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

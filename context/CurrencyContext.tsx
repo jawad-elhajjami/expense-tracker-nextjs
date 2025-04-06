@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState } from 'react'
+import LoadingScreen from '@/components/LoadingScreen'
 
 interface CurrencyContextType {
     currency: string
@@ -26,7 +27,12 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
         if (savedCurrency) {
             setCurrency(savedCurrency)
         }
-        setIsLoading(false)
+        // Add a small delay to prevent flash of loading state
+        const timer = setTimeout(() => {
+            setIsLoading(false)
+        }, 100)
+
+        return () => clearTimeout(timer)
     }, [])
 
     const handleCurrencyChange = (newCurrency: string) => {
@@ -42,7 +48,7 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
                 isLoading 
             }}
         >
-            {!isLoading && children}
+            {isLoading ? <LoadingScreen /> : children}
         </CurrencyContext.Provider>
     )
 } 
