@@ -1,17 +1,19 @@
 'use client'
 
 import { Transaction } from "@/types/Transaction";
-import { addCommas } from "@/lib/utils";
+import { formatAmount } from "@/lib/utils";
 import { toast } from 'react-toastify';
 import deleteTransaction from "@/app/actions/deleteTransaction";
 import editTransaction from "@/app/actions/editTransaction";
 import { useState } from "react";
 import { PencilIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useCurrency } from "@/context/CurrencyContext";
 
 const TransactionItem = ({ transaction }: {transaction: Transaction}) => {
     const [isEditing, setIsEditing] = useState(false);
     const [text, setText] = useState(transaction.text);
     const [amount, setAmount] = useState(transaction.amount);
+    const { currency } = useCurrency();
     const sign = transaction.amount < 0 ? '-' : '+';
 
     const handleDeleteTransaction = async (transactionId: string) => {
@@ -102,7 +104,9 @@ const TransactionItem = ({ transaction }: {transaction: Transaction}) => {
             <div className="transaction-item">
                 <span className="font-medium">{transaction.text}</span>
                 <div className="flex items-center gap-2">
-                    <span className="text-lg font-semibold">{sign}${ addCommas(Math.abs(transaction.amount)) }</span>
+                    <span className="text-lg font-semibold">
+                        {sign}{formatAmount(Math.abs(transaction.amount), currency)}
+                    </span>
                     <button 
                         onClick={() => setIsEditing(true)} 
                         className="edit-btn"

@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "@/components/Footer";
+import { CurrencyProvider } from '@/context/CurrencyContext'
+import CurrencySelector from '@/components/CurrencySelector'
 
 const nunito = Nunito({weight: '400', subsets: ["latin"]})
 
@@ -21,16 +23,21 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={`${nunito.className}`}>
-          <Header />
-          <main className="container">
-            {children}
-          </main>
-          <Footer />
-          <ToastContainer />
-        </body>
-      </html>
+      <CurrencyProvider>
+        <html lang="en">
+          <body className={`${nunito.className}`}>
+            <Header />
+            <main className="container">
+              <div className="flex justify-end mb-4">
+                <CurrencySelector />
+              </div>
+              {children}
+            </main>
+            <Footer />
+            <ToastContainer />
+          </body>
+        </html>
+      </CurrencyProvider>
     </ClerkProvider>
   );
 }
