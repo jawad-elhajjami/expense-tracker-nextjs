@@ -8,7 +8,7 @@ import { Suspense } from 'react'
 const Guest = () => {
     return (
         <Suspense fallback={<p>Loading...</p>}>
-            <section>
+            <section className="max-w-7xl mx-auto px-4 py-8">
                 <div className="guest grid lg:grid-cols-2 grid-cols-1 w-full gap-10 lg:min-w-7xl content-center items-center">
                     <div className="col-span-1 w-full">
                         <Image src={HeroImage} alt="hero" width={1000} height={1000} className="hidden md:block rounded-lg rotate-x-1 border border-green-200" />

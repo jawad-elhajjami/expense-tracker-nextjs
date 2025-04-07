@@ -10,7 +10,7 @@ export const formatAmount = (amount: number, currencyCode: string): string => {
     
     // Special formatting for JPY and other currencies that don't typically use decimals
     if (currency.code === 'JPY' || currency.code === 'CNY') {
-        return `${currency.symbol}${Math.round(amount)}`
+        return `${currency.symbol} ${Math.round(amount)}`
     }
     
     // Format with 2 decimal places for other currencies

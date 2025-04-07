@@ -19,9 +19,10 @@ const AddTransaction = () => {
         }
     }
     return ( <>
-        <h3 className="text-blue-500 text-xl font-semibold">Add transaction</h3>
-        <form ref={formRef} action={ clientAction }>
-            <div className="form-control">
+        <div className="p-4 bg-white rounded-lg shadow-md w-full">
+            <h3 className="text-blue-500 text-xl font-semibold">Add transaction</h3>
+            <form ref={formRef} action={ clientAction }>
+                <div className="form-control">
                 <label htmlFor="text">Text</label>
                 <input type="text" id="text" name="text" placeholder="Enter text..." />
             </div>
@@ -36,7 +37,8 @@ const AddTransaction = () => {
                 <input type="number" id="amount" name="amount" placeholder="Enter amount..." step="0.01"/>
             </div>
             <button className="btn">Add transaction</button>
-        </form>
+            </form>
+        </div>
     </> );
 }
  

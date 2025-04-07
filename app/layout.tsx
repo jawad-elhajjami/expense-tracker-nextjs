@@ -22,22 +22,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <CurrencyProvider>
         <html lang="en">
           <body className={`${nunito.className}`}>
-            <Header />
-            <main className="container">
-              <div className="flex justify-end mb-4">
-                <CurrencySelector />
-              </div>
-              {children}
-            </main>
-            <Footer />
-            <ToastContainer />
+              <ClerkProvider>
+                <CurrencyProvider>
+                      <Header />
+                      <main>
+                        {children}
+                      </main>
+                      <Footer />
+                      <ToastContainer />
+                </CurrencyProvider>
+              </ClerkProvider>
           </body>
         </html>
-      </CurrencyProvider>
-    </ClerkProvider>
   );
 }
