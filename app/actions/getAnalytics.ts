@@ -2,7 +2,7 @@
 
 import { db } from "@/lib/db"
 import { auth } from "@clerk/nextjs/server"
-import { startOfWeek, startOfMonth, startOfYear, endOfWeek, endOfMonth, endOfYear, eachDayOfInterval, eachMonthOfInterval, format } from "date-fns"
+import { startOfWeek, startOfMonth, startOfYear, endOfWeek, endOfMonth, endOfYear, eachDayOfInterval, eachMonthOfInterval, format, subMonths } from "date-fns"
 
 type Period = 'week' | 'month' | 'year';
 
@@ -36,9 +36,10 @@ async function getAnalytics(period: Period): Promise<{
                 interval = eachDayOfInterval({ start: startDate, end: endDate });
                 break;
             case 'month':
-                startDate = startOfMonth(now);
+                // For monthly view, show the last 6 months
                 endDate = endOfMonth(now);
-                interval = eachDayOfInterval({ start: startDate, end: endDate });
+                startDate = startOfMonth(subMonths(now, 5)); // 6 months ago
+                interval = eachMonthOfInterval({ start: startDate, end: endDate });
                 break;
             case 'year':
                 startDate = startOfYear(now);
@@ -63,25 +64,25 @@ async function getAnalytics(period: Period): Promise<{
 
         // Process the data based on the period
         const data = interval.map(date => {
-            const dayTransactions = transactions.filter(tx => {
+            const periodTransactions = transactions.filter(tx => {
                 const txDate = new Date(tx.createdAt);
-                if (period === 'year') {
+                if (period === 'year' || period === 'month') {
                     return txDate.getMonth() === date.getMonth() && 
                            txDate.getFullYear() === date.getFullYear();
                 }
                 return txDate.toDateString() === date.toDateString();
             });
 
-            const income = dayTransactions
+            const income = periodTransactions
                 .filter(tx => tx.amount > 0)
                 .reduce((sum, tx) => sum + tx.amount, 0);
 
-            const expenses = Math.abs(dayTransactions
+            const expenses = Math.abs(periodTransactions
                 .filter(tx => tx.amount < 0)
                 .reduce((sum, tx) => sum + tx.amount, 0));
 
             return {
-                name: period === 'year' ? format(date, 'MMM') : format(date, 'EEE'),
+                name: period === 'year' || period === 'month' ? format(date, 'MMM') : format(date, 'EEE'),
                 income,
                 expenses
             };
