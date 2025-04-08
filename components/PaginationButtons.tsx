@@ -66,7 +66,7 @@ const PaginationButtons = ({ currentPage, totalPages }: PaginationButtonsProps) 
             <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={isLoading || currentPage <= 1}
-                className={`relative flex items-center justify-center bg-blue-500 text-white px-3 py-2 rounded-lg transition-all duration-200 hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed min-w-[40px]`}
+                className={`relative flex items-center justify-center bg-gray-900 text-white px-3 py-2 rounded-lg transition-all duration-200 hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed min-w-[40px]`}
             >
                 ←
             </button>
@@ -83,8 +83,8 @@ const PaginationButtons = ({ currentPage, totalPages }: PaginationButtonsProps) 
                         disabled={isLoading || page === currentPage}
                         className={`relative flex items-center justify-center px-3 py-2 rounded-lg transition-all duration-200 min-w-[40px] ${
                             page === currentPage
-                                ? 'bg-blue-600 text-white cursor-default'
-                                : 'bg-blue-500 text-white hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed'
+                                ? 'bg-gray-900 text-white cursor-default'
+                                : 'bg-gray-500 text-white hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed'
                         }`}
                     >
                         {isLoading && page === currentPage ? (
@@ -104,7 +104,7 @@ const PaginationButtons = ({ currentPage, totalPages }: PaginationButtonsProps) 
             <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={isLoading || currentPage >= totalPages}
-                className={`relative flex items-center justify-center bg-blue-500 text-white px-3 py-2 rounded-lg transition-all duration-200 hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed min-w-[40px]`}
+                className={`relative flex items-center justify-center bg-gray-500 text-white px-3 py-2 rounded-lg transition-all duration-200 hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed min-w-[40px]`}
             >
                 →
             </button>

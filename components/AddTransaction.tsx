@@ -20,7 +20,7 @@ const AddTransaction = () => {
     }
     return ( <>
         <div className="p-4 bg-white rounded-lg shadow-md w-full">
-            <h3 className="text-blue-500 text-xl font-semibold">Add transaction</h3>
+            <h3 className="text-gray-900 text-xl font-semibold">Add transaction</h3>
             <form ref={formRef} action={ clientAction }>
                 <div className="form-control">
                 <label htmlFor="text">Text</label>
@@ -36,7 +36,7 @@ const AddTransaction = () => {
                 </label>
                 <input type="number" id="amount" name="amount" placeholder="Enter amount..." step="0.01"/>
             </div>
-            <button className="btn">Add transaction</button>
+            <button className="bg-green-500 p-4 rounded-lg w-full text-white font-bold mt-4 hover:bg-green-600 duration-200 cursor-pointer">Add transaction</button>
             </form>
         </div>
     </> );

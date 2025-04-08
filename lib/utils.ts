@@ -14,5 +14,5 @@ export const formatAmount = (amount: number, currencyCode: string): string => {
     }
     
     // Format with 2 decimal places for other currencies
-    return `${currency.symbol}${formattedNumber}`
+    return `${currency.symbol} ${formattedNumber}`
 }

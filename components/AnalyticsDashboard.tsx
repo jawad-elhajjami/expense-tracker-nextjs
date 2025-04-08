@@ -107,6 +107,30 @@ const AnalyticsDashboard = () => {
                 </div>
             </div>
 
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-4">Summary</h3>
+                    <div className="space-y-4">
+                        <div className="p-4 bg-green-50 rounded-lg">
+                            <p className="text-sm text-green-600 font-medium">Total Income</p>
+                            <p className="text-2xl font-bold text-green-700">
+                                {currency} {totalIncome.toLocaleString()}
+                            </p>
+                        </div>
+                        <div className="p-4 bg-red-50 rounded-lg">
+                            <p className="text-sm text-red-600 font-medium">Total Expenses</p>
+                            <p className="text-2xl font-bold text-red-700">
+                                {currency} {totalExpenses.toLocaleString()}
+                            </p>
+                        </div>
+                        <div className="p-4 bg-blue-50 rounded-lg">
+                            <p className="text-sm text-blue-600 font-medium">Net Savings</p>
+                            <p className="text-2xl font-bold text-blue-700">
+                                {currency} {netSavings.toLocaleString()}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             <div className="grid grid-cols-1 gap-y-6">
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                     <h3 className="text-lg font-semibold text-gray-800 mb-4">Income vs Expenses</h3>
@@ -158,29 +182,7 @@ const AnalyticsDashboard = () => {
                     </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-4">Summary</h3>
-                    <div className="space-y-4">
-                        <div className="p-4 bg-green-50 rounded-lg">
-                            <p className="text-sm text-green-600 font-medium">Total Income</p>
-                            <p className="text-2xl font-bold text-green-700">
-                                {currency}{totalIncome.toLocaleString()}
-                            </p>
-                        </div>
-                        <div className="p-4 bg-red-50 rounded-lg">
-                            <p className="text-sm text-red-600 font-medium">Total Expenses</p>
-                            <p className="text-2xl font-bold text-red-700">
-                                {currency}{totalExpenses.toLocaleString()}
-                            </p>
-                        </div>
-                        <div className="p-4 bg-blue-50 rounded-lg">
-                            <p className="text-sm text-blue-600 font-medium">Net Savings</p>
-                            <p className="text-2xl font-bold text-blue-700">
-                                {currency}{netSavings.toLocaleString()}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     );

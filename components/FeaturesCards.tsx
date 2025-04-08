@@ -27,7 +27,7 @@ import {
   
   const FeaturesCards = () => {
     return (
-      <div className="max-w-6xl mx-auto px-4 py-12 border-t border-gray-200  mt-8">
+      <div className="max-w-6xl mx-auto py-1 mt-8">
         <h2 className="text-center text-4xl font-bold text-gray-900">
           Features
         </h2>

@@ -2,8 +2,8 @@
 
 :root {
   /* Light theme (default) */
-  --primary-color: #3a86ff;
-  --secondary-color: #4361ee;
+  --primary-color: oklch(72.3% 0.219 149.579);
+  --secondary-color: oklch(62.7% 0.194 149.214);
   --success-color: #38b000;
   --danger-color: #d90429;
   --text-color: #2b2d42;
@@ -104,28 +104,6 @@ body {
   justify-content: center;
 }
 
-/* Navbar styling */
-.navbar {
-  background: var(--card-bg);
-  color: var(--text-color);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 16px 0;
-}
-
-.navbar a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-.navbar a:hover {
-  color: var(--primary-color);
-}
-
 .navbar button,
 .guest button 
 {
@@ -140,7 +118,10 @@ body {
   font-size: 14px;
   letter-spacing: 0.3px;
 }
-
+.guest button:hover{
+  background: var(--secondary-color);
+  transition: .4s ease;
+}
 .navbar button:hover {
   background: var(--secondary-color);
   transform: translateY(-2px);
@@ -259,7 +240,7 @@ input[type='number'] {
 input[type='text']:focus,
 input[type='number']:focus {
   outline: none;
-  border-color: var(--primary-color);
+  border-color: var(--success-color);
   box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.1);
 }
 
@@ -270,31 +251,6 @@ label {
   font-weight: 500;
   font-size: 15px;
   color: var(--text-color);
-}
-
-.btn {
-  cursor: pointer;
-  background-color: var(--primary-color);
-  box-shadow: var(--box-shadow);
-  color: #fff;
-  border: 0;
-  display: block;
-  font-size: 16px;
-  font-weight: 600;
-  margin: 20px 0 30px;
-  padding: 14px;
-  width: 100%;
-  border-radius: var(--small-radius);
-  transition: var(--transition);
-}
-
-.btn:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-2px);
-}
-
-.btn:active {
-  transform: translateY(0);
 }
 
 .btn:focus,

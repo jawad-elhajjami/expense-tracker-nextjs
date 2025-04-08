@@ -56,5 +56,4 @@ The application includes a powerful analytics dashboard that provides:
 - Export financial reports as PDF or CSV
 - Budget planning and tracking
 - Recurring transaction setup
-- Financial goals and progress tracking
-- Dark mode support
+- Financial goals and progress tracking- Dark mode support

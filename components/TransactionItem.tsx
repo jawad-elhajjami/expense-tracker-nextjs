@@ -89,7 +89,7 @@ const TransactionItem = ({ transaction }: {transaction: Transaction}) => {
                         <button 
                             type="button" 
                             onClick={handleCancel}
-                            className="flex-1 bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+                            className="flex-1 bg-gray-900 hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
                         >
                             Cancel
                         </button>

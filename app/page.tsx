@@ -34,9 +34,9 @@ export default async function HomePage({
               <Balance />
             </Suspense>
           </div>
-          <div>
+          {/* <div>
             <IncomeExpense />
-          </div>
+          </div> */}
         </div>
 
         <div className="mb-8">

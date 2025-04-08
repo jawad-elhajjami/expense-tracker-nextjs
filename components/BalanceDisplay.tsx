@@ -23,7 +23,7 @@ const BalanceDisplay = ({ initialBalance }: BalanceDisplayProps) => {
     return (
         <>
             <h4 className="text-gray-500">Your balance</h4>
-            <h1 className={`font-bold text-2xl ${initialBalance < 0 ? 'text-red-500' : 'text-green-500'}`}>
+            <h1 className={`font-bold text-4xl mb-8 ${initialBalance < 0 ? 'text-red-600' : 'text-green-500'}`}>
                 {sign}{formatAmount(Math.abs(initialBalance), currency)}
             </h1>
         </>
